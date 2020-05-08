@@ -3,9 +3,10 @@
 This repository contains the final project for the Algorithms and Data
 Structures Course of the 1st Semester of 2015/2016.
 
-It was developed by Miguel Malaca (@malaca3) and Miguel Pinho (@miguelpinho),
-and it passed all the 20 evaluation tests in the course's Mooshak (in the memory
-and time constraints). The project had the final grade of 19 (in 20).
+It was developed by Miguel Malaca ([@malaca3](https://github.com/malaca3)) and
+Miguel Pinho ([@miguelpinho](https://github.com/miguelpinho)), and it passed all
+the 20 evaluation tests in the course's Mooshak (in the memory and time
+constraints). The project had the final grade of 19 (in 20).
 
 This project consisted in an optimal route planner for an underground car park.
 It touched on several concepts lectured in the course, and in particular it
