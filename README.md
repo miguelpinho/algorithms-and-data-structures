@@ -14,3 +14,25 @@ solved the problem efficiently (in terms of memory and run time) using a
 modified version of **Dijkstra's algorithm**. It also provides efficient
 implementations of the necessary data structures, including **linked lists**,
 **heaps**, and **hash tables**.
+
+## Building
+
+In an linux/unix system, the project can be compiled using:
+
+```bash
+make autopark
+```
+
+## Usage
+
+The autopark executable has the following usage:
+
+```bash
+./autopark file.cfg file.inp [file.res]
+```
+
+Where `file.cfg` is the file with the garage configuration, and `file.inp` is
+the file the cars that have to be parked, using the formats described in
+`docs/description-pt.pdf`. `file.res` is an optional input file with restriction
+events in the park. The output file is generated with the same path as
+`file.inp`, but with the extension `.pts`.
