@@ -11,6 +11,10 @@ autopark
 *.elf
 obj/
 
+# Dependencies
+*.d
+d/
+
 # Linker output
 *.ilk
 *.map
