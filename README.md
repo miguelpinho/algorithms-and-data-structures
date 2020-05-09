@@ -23,6 +23,8 @@ In an linux/unix system, the project can be compiled using:
 make autopark
 ```
 
+It has not dependencies other than the standard libraries.
+
 ## Usage
 
 The autopark executable has the following usage:
@@ -36,3 +38,10 @@ the file the cars that have to be parked, using the formats described in
 `docs/description-pt.pdf`. `file.res` is an optional input file with restriction
 events in the park. The output file is generated with the same path as
 `file.inp`, but with the extension `.pts`.
+
+## Project tree
+
+- `src`: C source files (`.c`)
+- `inc`: C header files (`.h`)
+- `samples`: sample input and output files
+- `docs`: project description and report
