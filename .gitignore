@@ -9,6 +9,7 @@ autopark
 *.ko
 *.obj
 *.elf
+obj/
 
 # Linker output
 *.ilk

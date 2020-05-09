@@ -1,36 +1,38 @@
 # Compiler flags
-CC = gcc
-CFLAGS = -O3 -Wall -ansi
+CC      := gcc
+CFLAGS  := -O3 -Wall -ansi
 
-# Sources
-SOURCES = main.c garage.c restriction.c graph.c p_queue.c h_table.c queue.c LinkedList.c defs.c
+# Target binary
+TARGET  := autopark
 
-# Objects
-OBJECTS = main.o garage.o restriction.o graph.o p_queue.o h_table.o queue.o LinkedList.o defs.o
+# Folders
+SRC_DIR := src
+INC_DIR := inc
+OBJ_DIR := obj
 
-autopark: $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
+# Files
+SOURCES := $(wildcard $(SRC_DIR)/*.c)
+OBJECTS := $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-main.o: main.c
+# Rules
+.PHONY: all dir clean fullclean
 
-garage.o: garage.c
+all: $(TARGET)
 
-restriction.o: restriction.c
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ $(OBJECTS)
 
-graph.o: graph.c
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.c | dir
+	$(CC) -c $(CFLAGS) -I$(INC_DIR) $< -o $@
 
-p_queue.o: p_queue.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | dir
+	$(CC) -c $(CFLAGS) -I$(INC_DIR) $< -o $@ 
 
-h_table.o: h_table.c
-
-queue.o: queue.c
-
-LinkedList.o: LinkedList.c
-
-defs.o: defs.c
+dir:
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -f *.o *.~ autopark *.gch
+	rm -rf $(OBJ_DIR)
 
-depend::
-	makedepend $(SOURCES)
+fullclean: clean
+	rm -f autopark
