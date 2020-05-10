@@ -23,7 +23,7 @@ In an linux/unix system, the project can be compiled using:
 make autopark
 ```
 
-It has not dependencies other than the standard libraries.
+It has no dependencies other than the standard libraries.
 
 ## Usage
 
